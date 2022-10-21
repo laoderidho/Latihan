@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="date">Masukkan Tanggal:</label>
+        <input id="date" type="number">
+        <br>
+        <label for="month">Masukkan Bulan:</label>
+        <input id="month" type="number">
+        <br>
+        <label for="year">Masukkan Tahun</label>
+        <input id="year" type="number">
+        <br>
+        <button onclick=DateFormat(date.value,month.value,year.value)>Klik</button>
+    </div>
+
+    <script>
+        function DateFormat(date, month, year){
+
+            month = parseInt(month);
+            date = parseInt(date);
+            year = parseInt(year);
+            let year1 = new Date().getFullYear();
+            if(date<10){
+                date= `0${date}`;
+            }
+            if(date>31){
+                return alert('masukkan tanggal yang valid');
+              }
+            if(month>12){
+                return alert('masukkan tanggal yang valid');
+            }
+            if(year<1900 || year > year1){
+                return alert('masukkan tanggal yang valid');
+            }
+            switch(month){
+                case 1:
+                    month = 'January';
+                    break; 
+                case 2:
+                    month = 'February';
+                    break; 
+                case 3:
+                    month = 'Maret';
+                    break; 
+                case 4:
+                    month = 'April';
+                    break; 
+                case 5:
+                    month = 'Mei';
+                    break; 
+                case 6:
+                    month = 'Juny';
+                    break; 
+                case 7:
+                    month = 'July';
+                    break; 
+                case 8:
+                    month = 'Agustus';
+                    break;
+                case 9:
+                    month = 'september';
+                    break;
+                case 10:
+                    month = 'Oktober';
+                    break;
+                case 11:
+                    month = 'November';
+                    break;
+                case 12:
+                    month = 'Desember';
+                    break; 
+            }
+            return alert(`${date}-${month}-${year}`);
+        }
+    </script>
+</body>
+</html>
