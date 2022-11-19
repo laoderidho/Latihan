@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Covid / demam Biasa </title>
+</head>
+<body>
+    <h1>Apakah Anda Covid ?</h1>
+
+    <form action="">
+        <h4 for="g1" name="g1">Apakah anda Batuk</h4>
+        <input type="radio" name="g1" value="Benar" > <label for="g1">Batuk</label>
+        <input type="radio" name="g1" value="salah"> <label for="g1">Tidak</label>
+        <br>
+        <br>
+        <input type="submit" id="submit">
+
+        <h1 id="tes"></h1>
+    </form>
+
+    <script>
+        const input = document.getElementById('submit')
+        .addEventListener('click', function (...arg){
+           const tesg1 = g1();
+            
+          
+        })
+
+        const g1 = ()=>{
+             const g1 = document.getElementsByName('g1');
+                for (let i = 0; i < g1.length; i++) {
+                if (g1[i].checked)
+                   return (g1[i].value)
+            } 
+        }
+    </script>
+</body>
+</html>
