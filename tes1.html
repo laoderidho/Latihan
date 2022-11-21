@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">Nama</label>
+    <input type="text" id="tes">
+
+    <button id="tombol" onclick="Convert(tes.value)">Klik</button>
+
+    <h2 id="tes1"></h2>
+
+    <script>
+        
+        const Convert = (input)=>{
+            
+            switch(input){
+                case "aku":
+                    input = 'I'
+                    break;
+                case "cinta":
+                    input = 'Love'
+                    break;
+            }
+
+            const tes1 = document.getElementById('tes1').innerHTML = input
+        }
+
+    </script>
+</body>
+</html>
