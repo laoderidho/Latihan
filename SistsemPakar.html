@@ -4,11 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #submit{
+            background-color: blue;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border: blue;
+            width: 70px;
+            height: 30px;
+            text-align: center;
+            transition: .5;
+        }
+        #submit:hover{
+             background-color: rgb(87, 87, 231);
+        }
+        ul li a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
     <title>Cek Penyakit Paru</title>
 </head>
 <body>
     <h1>Cek Gejala Penyakit Paru ?</h1>
 
+    <h3>Gejala penyakit paru ini di antaranya adalah</h3>
+    <ul>
+        <li> <a target="_blank" href="https://www.alodokter.com/pneumonia/gejala">Pneumonia</a></li>
+        <li> <a target="_blank" href="https://www.mitrakeluarga.com/artikel/artikel-kesehatan/tuberkulosis">Tuberkulosis</a></li>
+        <li> <a target="_blank" href="https://www.halodoc.com/kesehatan/bronkitis">Bronkitis</a></li>
+        <li> <a target="_blank" href="https://www.alodokter.com/asma/gejala">Asma</a></li>
+        <li> <a target="_blank" href="https://www.alodokter.com/penyakit-paru-obstruktif-kronis">Penyakit Paru Obstruktif kronis</a></li>
+    </ul>
+
+    <h3>Pertanyaan</h3>
     <form action="">
         <h4 for="g1" name="g1">1.Apakah anda batuk ?</h4>
         <input type="radio" name="g1" value="benar" > <label for="g1">Iya</label>
@@ -130,11 +164,16 @@
         <input type="radio" name="g24" value="salah"> <label for="g24">Tidak</label>
         <br>
 
-       
+        <h4 for="g25" name="g25">25.Apakah anda mudah lelah ?</h4>
+        <input type="radio" name="g25" value="benar"> <label for="g25">Iya</label>
+        <input type="radio" name="g25" value="salah"> <label for="g25">Tidak</label>
         <br>
-        <input type="submit" id="submit">
+        <br>
 
-        <h1 id="tes"></h1>
+        <input type="submit" id="submit">
+      
+
+        
     </form>
 
     <script>
@@ -164,25 +203,33 @@
            const tesg22 = g22();
            const tesg23 = g23();
            const tesg24 = g24();
+           const tesg25 = g25();
 
-        //    if(tesg1,tesg2,tesg3,tesg4,tesg5,tesg6,tesg7,tesg8,tesg9,tesg10,tesg11,tesg12,tesg13,tesg14,tesg15,tesg16,tesg17,tesg18,tesg19,tesg20,tesg21,tesg22,tesg23,tesg24 == undefined){
-        //         return alert(`Tidak Boleh Kosong`)
-        //    }
+           if(tesg1,tesg2,tesg3,tesg4,tesg5,tesg6,tesg7,tesg8,tesg9,tesg10,tesg11,tesg12,tesg13,tesg14,tesg15,tesg16,tesg17,tesg18,tesg19,tesg20,tesg21,tesg22,tesg23,tesg24,tesg25 == undefined){
+                return alert(`Tidak Boleh Kosong`)
+           }
            
-            // if(tesg1=="benar" && tesg2=="benar" && tesg3=="benar" && tesg4=="salah" && tesg5 =="benar" && tesg6== "benar" && tesg7=="benar" && tesg8== "benar" && tesg9=="benar" && tesg10=="benar" && tesg11=="benar" && tesg12=="benar" && tesg13=="benar" && tesg14 =="benar" && tesg15=="benar" && tesg16=="benar" && tesg17=="salah" && tesg18=="salah" &&tesg19=="salah" && tesg20=="salah" && tesg21=="salah" && tesg22=="salah", tesg23=="salah" && tesg24=="salah"){
-            //     return alert(`anda terkena gejala pneumonia`)
-            // }
-            if (tesg1 == "benar" && tesg2 == "benar" && tesg3 == "benar" && tesg4 == "salah" && tesg5 == "benar" && tesg6 == "benar" && tesg7 == "benar" && tesg8 == "benar" && tesg9 == "benar" && tesg10 == "benar" && tesg11 == "benar" && tesg12 == "benar" && tesg13 == "benar" && tesg14 == "benar" && tesg15 == "benar" && tesg16 == "benar" && tesg17 == "salah" && tesg18 == "salah" && tesg19 == "salah" && tesg20 == "salah" && tesg21 == "salah" && tesg22 == "salah" && tesg23 == "salah" && tesg24 == "salah") {
+            if (tesg1 =="benar" && tesg2 =="benar" && tesg4=="benar" && tesg5=="benar" && tesg6=="benar" && tesg7=="benar" && tesg8=="benar" && tesg9=="benar" && tesg10 == "benar" && tesg11 == "benar" && tesg12 == "benar" && tesg13 == "benar" && tesg14 == "benar" && tesg15 == "benar" && tesg16 == "benar") {
                 return alert(`anda terkena gejala pneumonia`)
             }
 
-
-            else if(tesg1=="benar" && tesg2=="benar" && tesg3=="salah" && tesg4 =="benar" && tesg5=="salah" && tesg6 == "benar" && tesg7=="salah" && tesg8=="salah" && tesg9 =="benar" && tesg10=="salah" && tesg11 == "benar" && tesg12=="salah" && tesg13 =="benar" && tesg14=="salah" && tesg15=="salah", tesg16=="salah" && tesg17 =="benar" && tesg18=="benar"  && tesg19=="benar" && tesg20=="benar" && tesg21=="salah"){
-                return alert(`Anda terkena tuberkulosis`)
+            if(tesg1=="benar" && tesg2=="benar" && tesg4=="benar" && tesg9=="benar" && tesg11=="benar" && tesg6=="benar" && tesg17=="benar" && tesg18=="benar" && tesg19=="benar" && tesg25=="benar"){
+                return alert(`Anda terkena gejala tuberkulosis`)
             }
             
+            if(tesg6=="benar" && tesg7=="benar" && tesg5=="benar" && tesg20=="benar" && tesg21=="benar" && tesg22=="benar" && tesg9=="benar"){
+                return alert(`anda terkena gejala bronkitis`)  
+            }
+            if(tesg1=="benar" && tesg5=="benar" && tesg9 =="benar" && tesg22=="benar"){
+                return alert(`anda terkena gejala asma`)
+            }
+
+            if(tesg1=="benar" && tesg2=="benar" && tesg19=="benar" && tesg22=="benar" && tesg9=="benar" && tesg13=="benar" && tesg24=="benar"){
+                return alert(`Anda terkena gejala Penyakit paru obstruktif kronis`)
+            }
+
             else{
-                return alert(`maaf sistem kami tidak bisa menentukan silahkan untuk mendiagnosa ke dokter`)
+                return alert(`maaf sistem kami tidak bisa menentukan, silahkan untuk mendiagnosa ke dokter`)
             }
         })
 
@@ -377,6 +424,15 @@
                 }
             }
         
+         
+        const g25 = () => {
+                const g25 = document.getElementsByName('g25');
+                for (let i = 0; i < g25.length; i++) {
+                    if (g25[i].checked)
+                        return (g25[i].value)
+                }
+            }
+
     </script>
 </body>
 </html>
