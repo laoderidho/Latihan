@@ -1,23 +1,34 @@
-
-
-let arr = [1,2,4]
-
-let arr2 = [1,3,4]
-const sort = (list1, list2)=>{
-    let arr = []
-    arr.push(list1)
-    arr.push(list2)
-   let n = arr.length; 
-   for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
-    }
-  }
-  return arr;
+function ListNode(val, next) {
+  this.val = val === undefined ? 0 : val;
+  this.next = next === undefined ? null : next;
 }
 
-console.log(sort(arr, arr2))
+const twoMergetsort = (list1, list2) => {
+  let curr = new ListNode();
+  const temp = curr;
+
+  while (list1 && list2) {
+    if (list1.val < list2.val) {
+      curr.next = list1;
+      list1 = list1.next;
+    } else {
+      curr.next = list2;
+      list2 = list2.next;
+    }
+    curr = curr.next;
+  }
+
+  if (list1) {
+    curr.next = list1;
+  }
+
+  if (list2) {
+    curr.next = list2;
+  }
+
+  return temp.next;
+};
+
+const arr1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+const arr2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+console.log(twoMergetsort(arr1, arr2));
